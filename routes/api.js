@@ -94,6 +94,55 @@ router.get('/article/:id', function(req, res) {
     }
 });
 
+router.get('/collections/:id', function(req, res) {
+    var id = req.params.id;
+    console.log("id inside "+id);
+    
+    try{
+        var db = req.db;
+        var collection = db.get('GALLERY');
+    }
+    catch(err){
+        res.statusCode = 404;
+        console.log ("Error while connecting to DB"+ err);
+        res.json({Error:'Error connecting to DB'});
+    }
+    
+    if(collection!=null){
+        collection.find({'COLLECTION_ID':id},function(e,docs){
+            res.json(docs);
+        });
+    } else{
 
+        console.log ("Not Found: "+id);
+        res.statusCode = 404;
+        res.json("{Error:'ID Not found'}");
+    }
+});
 
+router.get('/all-collections/', function(req, res) {
+    var id = req.params.id;
+    console.log("id inside "+id);
+    
+    try{
+        var db = req.db;
+        var collection = db.get('ALL_COLLECTIONS');
+    }
+    catch(err){
+        res.statusCode = 404;
+        console.log ("Error while connecting to DB"+ err);
+        res.json({Error:'Error connecting to DB'});
+    }
+    
+    if(collection!=null){
+        collection.find({'ACTIVE':'YES'},function(e,docs){
+            res.json(docs);
+        });
+    } else{
+
+        console.log ("Not Found: "+id);
+        res.statusCode = 404;
+        res.json("{Error:'ID Not found'}");
+    }
+});
 module.exports = router;

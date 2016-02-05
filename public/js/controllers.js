@@ -38,13 +38,35 @@ phonecatControllers.controller('ArticleListCtrl', ['$scope', '$http',
     $scope.orderProp = 'age';
   }]);
 
-phonecatControllers.controller('ArticleDetailCtrl', ['$scope', '$routeParams', '$http',
+
+phonecatControllers.controller('FashionListCtrl', ['$scope', '$http',
+  function($scope, $http) {
+    $http.get('api/all-collections').success(function(data) {
+      $scope.fashion = data;
+    });
+
+    $scope.orderProp = 'ORDER';
+  }]);
+
+phonecatControllers.controller('CollectionCtrl', ['$scope', '$routeParams', '$http',
   function($scope, $routeParams, $http) {
     
-      $http.get('api/article/' + $routeParams.articleId).success(function(data) {
-      $scope.article = data[0];         
+      $http.get('api/collections/' + $routeParams.Id).success(function(data) {
+      $scope.collections = data;         
     });
       
   }]);
+
+
+phonecatControllers.controller('ItemDetailCtrl', ['$scope', '$routeParams', '$http',
+  function($scope, $routeParams, $http) {
+    
+      $http.get('api/collections/' + $routeParams.Id1).success(function(data) {
+      $scope.collections = data;         
+      $scope.item=$routeParams.Id2
+    });
+      
+  }]);
+
 
 
