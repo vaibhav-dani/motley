@@ -1,7 +1,9 @@
 # motley
-Motley Star - Article Listing
+
 
 To Install:
+
+Command prompt:
 
 npm install
 
@@ -13,4 +15,5 @@ cd ../
 
 npm start
 
-browser : localhost:9000/#/fashion
+browser:
+localhost:9000/#/fashion
