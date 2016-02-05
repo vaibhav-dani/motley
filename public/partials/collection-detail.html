@@ -1,0 +1,39 @@
+   <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-12">
+                <h1 class="page-header">{{collections[0].COLLECTION_ID}}</h1>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb" ng-repeat="collection in collections">
+                <a class="thumbnail" ng-href=#/detail/{{collection.COLLECTION_ID}}/item/{{collection.ITEM_ID}}>
+                    <img class="img-responsive" ng-src={{collection.ITEM_IMAGE_URL}} alt="" height="150" width="150">
+                </a>
+                <small>
+                    <a href="#">{{collection.ITEM_ID}}</a>
+                </small>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a class="thumbnail" href='#/fashion'>
+                    <img class="img-responsive" src="http://placehold.it/750x450" alt="" >
+                </a>
+            </div>
+
+        </div>
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Your Website 2014</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+

@@ -1,0 +1,27 @@
+   <div class="container">
+
+        
+
+            
+            <div ng-repeat="collection in collections" ng-if="item==collection.ITEM_ID">
+        <div class="row">    
+            <div class="col-lg-12">
+                <h1 class="page-header">{{collection.ITEM_ID}}</h1>
+                <small>{{collection.ITEM_SHORT_DESCRIPTION}}</small>
+            </div>
+    </div>
+    <div class="row">    
+                <a class="thumbnail" ng-href={{collection.ITEM_SHOP_LINK}}>
+                    <img class="img-responsive" ng-src={{collection.ITEM_IMAGE_URL}} alt="">
+                </a>
+            </div>
+
+
+        </div>
+
+        <hr>
+
+        <!-- Footer -->
+        
+    </div>
+    <div footer></div>

@@ -1,0 +1,29 @@
+    <div class="container">
+        <!-- Page Header -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">StyleShop
+                    <small> - Handpicked Online Fashion for You</small>
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Projects Row -->
+        <div class="row" >
+            <div class="col-md-6 portfolio-item" ng-repeat="collection in fashion">
+                <a href="#/collections/{{collection.COLLECTION_ID}}">
+                    <img height="200" width="300" class="img-responsive" ng-src="{{collection.IMAGE}}" alt="">
+                </a>
+                <h3>
+                    <a href="#/collections/{{collection.COLLECTION_ID}}">{{collection.COLLECTION_ID}}</a>
+                </h3>
+                
+            </div>
+        </div>
+        <!-- /.row -->
+        <!-- Footer -->
+       
+    </div>
+    <div footer></div>
+    <!-- /.container -->
